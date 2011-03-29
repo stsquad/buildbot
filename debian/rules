@@ -4,14 +4,22 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-p	= buildbot
-d	= debian/$(p)
+# source names
+sm	= master
+ss	= slave
+# package names
+pm	= buildbot
+ps	= buildbot-slave
+# package build directories
+dm	= debian/$(pm)
+ds	= debian/$(ps)
 
 build: build-stamp
 
 build-stamp:
 	dh_testdir
-	python setup.py build
+	cd master && python setup.py build
+	cd slave && python setup.py build
 	touch build-stamp
 
 clean:
@@ -29,7 +37,8 @@ install: build
 	dh_installdirs \
 		/usr/share/info \
 		/usr/share/doc/$(p)
-	python setup.py install --prefix=/usr --root=$(d) --no-compile
+	cd master && python setup.py install --prefix=/usr --root=../$(dm) --no-compile
+	cd slave && python setup.py install --prefix=/usr --root=../$(ds) --no-compile
 	-find debian -name '*.py[co]' | xargs rm -f
 
 	: # Replace all '#!' calls to python with /usr/bin/python
@@ -52,7 +61,8 @@ binary-indep: build install
 	dh_testdir
 	dh_testroot
 	dh_installchangelogs #ChangeLog
-	dh_installdocs NEWS README
+	dh_installdocs --builddirectory=$(dm) $(sm)/NEWS $(sm)/README
+	dh_installdocs --builddirectory=$(ds) $(ss)/NEWS $(ss)/README
 #	makeinfo --html --no-split -o $(d)/usr/share/doc/$(p)/buildbot.html \
 #		docs/buildbot.texinfo
 	dh_installinit --no-restart-on-upgrade --no-start

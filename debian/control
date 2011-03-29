@@ -28,3 +28,18 @@ Description: a system to automate the compile/test cycle
  broken the build or not. Warning counts, lint checks, image size,
  compile time, and other build parameters can be tracked over time,
  are more visible, and are therefore easier to improve.
+
+Package: buildbot-slave
+Architecture: all
+Depends: ${python:Depends}, ${misc:Depends}, python-twisted-core (>= 2.2), python-twisted-words, dpkg (>= 1.15.4) | install-info
+XB-Python-Version: ${python:Versions}
+Description: a system to automate the compile/test cycle
+ The BuildBot is a system to automate the compile/test cycle required
+ by most software projects to validate code changes. By automatically
+ rebuilding and testing the tree each time something has changed,
+ build problems are pinpointed quickly, before other developers are
+ inconvenienced by the failure. The guilty developer can be identified
+ and harassed without human intervention.
+ .
+ This package contain the buildbot slave which talks to a master process
+ potentially hosted on another machine.
