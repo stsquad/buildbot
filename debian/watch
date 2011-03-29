@@ -1,2 +1,2 @@
 version=3
-http://sf.net/buildbot/buildbot-(.*)\.tar\.gz
+http://githubredir.debian.net/github/buildbot/buildbot/v(.*).tar.gz
