@@ -1,3 +1,10 @@
+buildbot (0.8.3p1-1) unstable; urgency=low
+
+  * New upstream version
+  * Fixed debian/watch for new location on github
+
+ -- Alex Bennée <Alex.Bennee@cambridgebroadband.com>  Tue, 29 Mar 2011 15:58:00 +0100
+
 buildbot (0.8.1-1ubuntu2) lucid; urgency=low
 
   * Rebuild removing docs handling.
