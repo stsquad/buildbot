@@ -1,3 +1,9 @@
+buildbot (0.8.3p1-3) unstable; urgency=low
+
+  * Add init/default scripts to buildbot-slave
+
+ -- Alex Bennée <Alex.Bennee@cambridgebroadband.com>  Wed, 30 Mar 2011 15:07:52 +0100
+
 buildbot (0.8.3p1-2) unstable; urgency=low
 
   * Add python dependencies for buildbot master
