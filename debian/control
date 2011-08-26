@@ -31,7 +31,7 @@ Description: a system to automate the compile/test cycle
 
 Package: buildbot-slave
 Architecture: all
-Depends: python (>= 2.4), python-twisted-core (>= 2.2), python-twisted-words, dpkg | install-info
+Depends: python (>= 2.4), python-twisted-core (>= 2.2), python-twisted-words
 XB-Python-Version: ${python:Versions}
 Description: a system to automate the compile/test cycle
  The BuildBot is a system to automate the compile/test cycle required
