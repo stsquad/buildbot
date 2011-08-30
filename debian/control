@@ -10,7 +10,7 @@ Standards-Version: 3.8.3
 
 Package: buildbot
 Architecture: all
-Depends: ${python:Depends}, ${misc:Depends}, python-twisted-core (>= 2.2), python-twisted-words, python-jinja2, python-simplejson, python-sqlalchemy, python-migrate, python-pysqlite2, adduser, dpkg (>= 1.15.4) | install-info
+Depends: ${python:Depends}, ${misc:Depends}, python-twisted-core (>= 2.2), python-twisted-words, python-jinja2, python-simplejson, python-sqlalchemy (>=0.6), python-migrate, python-pysqlite2, adduser, dpkg (>= 1.15.4) | install-info
 Recommends: python-twisted-mail, python-twisted-web
 Suggests: bzr | subversion | cvs | mercurial | darcs | git-core
 XB-Python-Version: ${python:Versions}
