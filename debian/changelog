@@ -1,3 +1,9 @@
+buildbot (0.8.5-1) unstable; urgency=low
+
+  * Add patch to work-around Git 1.7.7 issues
+
+ -- Alex Bennée <ajb@cbnl.com>  Mon, 31 Oct 2011 11:30:00 +0100
+
 buildbot (0.8.5-0) unstable; urgency=low
 
   * New upstream version
